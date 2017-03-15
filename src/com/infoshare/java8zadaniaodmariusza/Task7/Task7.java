@@ -40,6 +40,31 @@ public class Task7 {
                 .limit(3)
                 .forEach(System.out::println);
 
+        //e. znajdż 3 najkrótsze
+        System.out.println("\n znajdż 3 najkrótsze:");
+        ksiazki.stream()
+                .sorted(Comparator.comparingInt(Ksiazka::getLiczbaStron))
+                .limit(3)
+                .forEach(System.out::println);
+
+        //f. Znajdź tę o nadłuższym tytule
+        System.out.println("\n Znajdź tę o nadłuższym tytule:");
+        Optional<Ksiazka> najdluzszyTytul = ksiazki.stream()
+                .max(Comparator.comparingInt(s -> s.getTytul().length()));
+        System.out.println(najdluzszyTytul.get().getTytul());
+
+        //g. Wypisz tytuły książęk posortowane wg rosnącej liczy stron
+        System.out.println("\n Wypisz tytuły książęk posortowane wg rosnącej liczy stron:");
+        ksiazki.stream()
+                .sorted(Comparator.comparingInt(Ksiazka::getLiczbaStron))
+                .map(Ksiazka::getTytul)
+                .forEach(System.out::println);
+
+        //h. znajdź tylko te dla dzieci
+        System.out.println("\n znajdź tylko te dla dzieci:");
+        ksiazki.stream()
+                .filter(Ksiazka::isDlaDzieci)
+                .forEach(System.out::println);
 
     }
 
