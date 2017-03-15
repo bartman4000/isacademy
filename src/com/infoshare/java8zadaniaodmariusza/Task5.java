@@ -2,10 +2,6 @@ package com.infoshare.java8zadaniaodmariusza;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.UnaryOperator;
-import java.util.stream.Collectors;
 
 /**
  * Created by bartman3000 on 2017-03-14.
